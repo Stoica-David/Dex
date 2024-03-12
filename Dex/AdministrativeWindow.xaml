@@ -2,22 +2,22 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Administrative Window" Height="300" Width="400">
-	<Grid>
-		<!-- Word Label and TextBox -->
-		<Label Content="Word:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10"/>
-		<TextBox x:Name="wordTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,10,10,0" Width="200"/>
+    <Grid>
+        <!-- Word Label and TextBox -->
+        <Label Content="Word:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10"/>
+        <TextBox x:Name="wordTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,10,10,0" Width="200"/>
 
-		<!-- Image Label and Button to Select Image -->
-		<Label Content="Image:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40"/>
-		<Button Content="Select Image" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,40,10,0" Width="100"/>
+        <!-- Image Label and Button to Select Image -->
+        <Label Content="Image:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40"/>
+        <Button Content="Select Image" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,40,10,0" Width="100"/>
 
-		<!-- Category Label and TextBox -->
-		<Label Content="Category:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70"/>
-		<TextBox x:Name="categoryTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,70,10,0" Width="200"/>
+        <!-- Category Label and TextBox -->
+        <Label Content="Category:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70"/>
+        <TextBox x:Name="categoryTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,70,10,0" Width="200"/>
 
-		<!-- Add, Remove, and Modify Buttons -->
-		<Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,100" Width="75"/>
-		<Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,100" Width="75"/>
-		<Button Content="Modify" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,100" Width="75"/>
-	</Grid>
+        <!-- Add, Remove, and Modify Buttons -->
+        <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,100" Width="75"/>
+        <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,100" Width="75"/>
+        <Button Content="Modify" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,100,0,0" Width="78"/>
+    </Grid>
 </Window>

@@ -10,20 +10,16 @@ namespace Dex
 {
     public class Admin
     {
-        public string Username { get; }
-        private readonly string password;
+        public string Name { get; set; }
+        public string Password { get; set; }
+
         private readonly JsonHandler jsonHandler;
 
-        public Admin(string username, string password)
+        public Admin(string name, string password)
         {
-            Username = username;
-            this.password = password;
+            Name = name;
+            Password = password;
             jsonHandler = new JsonHandler();
-        }
-
-        public bool Authenticate(string enteredPassword)
-        {
-            return password == enteredPassword;
         }
 
         public void AddWord(Word newWord)

@@ -62,6 +62,7 @@
     <Compile Include="AdministrativeWindow.xaml.cs">
       <DependentUpon>AdministrativeWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DexManager.cs" />
     <Compile Include="GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>

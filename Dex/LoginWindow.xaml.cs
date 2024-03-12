@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Dex
@@ -12,27 +14,23 @@ namespace Dex
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            // Retrieve the username and password from the TextBox and PasswordBox
-            string username = usernameBox.Text;
+            string username = usernameTextBox.Text;
             string password = passwordBox.Password;
 
-            // Perform login logic here
-            if (Authenticate(username, password))
+            List<Admin> admins = DexManager.Instance.Admins.ToList();
+
+            Admin matchingAdmin = admins.FirstOrDefault(admin => admin.Name == username && admin.Password == password);
+
+            if (matchingAdmin != null)
             {
-                MessageBox.Show("Login successful!");
-                // Proceed with administrative tasks
+                AdministrativeWindow adminWindow = new AdministrativeWindow();
+                adminWindow.Show();
+                Close();
             }
             else
             {
                 MessageBox.Show("Invalid username or password. Please try again.");
             }
-        }
-
-        private bool Authenticate(string username, string password)
-        {
-            // Perform authentication logic here
-            // For demonstration, let's assume a hardcoded username and password
-            return username == "admin" && password == "password";
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -55,16 +53,12 @@ namespace Dex
 
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            var passwordBox = sender as PasswordBox;
-            if (passwordBox != null)
-            {
-                // Update the password when it changes
-                // Note: In this approach, we don't need to store the password separately
-                // as we handle the authentication directly
-            }
+            // Update the password when it changes
+            // Note: In this approach, we don't need to store the password separately
+            // as we handle the authentication directly
         }
 
-        private void usernameBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void usernameTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             // Your event handling logic here
         }

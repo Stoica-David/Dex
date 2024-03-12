@@ -41,16 +41,6 @@ namespace Dex
             this.Close();
         }
 
-        private void searchBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            // TODO: Here
-        }
-
-        private void OnSearchBoxTextChanged(object sender, KeyEventArgs e)
-        {
-            // TODO: Here
-        }
-
         private Word GetWord(string word)
         {
             foreach (Word wordObj in words)

@@ -7,8 +7,8 @@ namespace Dex
 {
     public class JsonHandler
     {
-        private readonly string adminsFilePath = "admins.json";
-        private readonly string wordsFilePath = "words.json";
+        private readonly string adminsFilePath = "..\\..\\admins.json";
+        private readonly string wordsFilePath = "..\\..\\words.json";
 
         public List<Admin> ReadAllAdmins()
         {

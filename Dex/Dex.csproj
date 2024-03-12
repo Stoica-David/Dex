@@ -121,17 +121,31 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="admins.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="words.json" />
+    <None Include="resources\admins.json" />
+    <None Include="resources\words.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="images\apple.jpg" />
+    <Resource Include="images\banana.jpg" />
+    <Resource Include="images\beleaua.jpg" />
+    <Resource Include="images\carrot.jpg" />
+    <Resource Include="images\default.jpg" />
+    <Resource Include="images\dog.jpg" />
+    <Resource Include="images\elephant.jpg" />
+    <Resource Include="images\football.jpg" />
+    <Resource Include="images\guitar.jpg" />
+    <Resource Include="images\house.jpg" />
+    <Resource Include="images\ice cream.jpg" />
+    <Resource Include="images\jacket.jpg" />
+    <Resource Include="images\tuica.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

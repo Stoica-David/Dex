@@ -2,61 +2,67 @@
     {
         "name": "apple",
         "description": "A round fruit with red or green skin and a whitish flesh.",
-        "image-path": "images/apple.jpg",
+        "path": "images/apple.jpg",
         "category": "fruits"
     },
     {
         "name": "banana",
         "description": "A long curved fruit with a yellow skin.",
-        "image-path": "images/banana.jpg",
+        "path": "images/banana.jpg",
         "category": "fruits"
     },
     {
         "name": "carrot",
         "description": "A long, orange vegetable with a sweet taste.",
-        "image-path": "images/carrot.jpg",
+        "path": "images/carrot.jpg",
         "category": "vegetables"
     },
     {
         "name": "dog",
         "description": "A domesticated carnivorous mammal with a snout, sharp teeth, and a bark or howl.",
-        "image-path": "images/dog.jpg",
+        "path": "images/dog.jpg",
         "category": "animals"
     },
     {
         "name": "elephant",
         "description": "A large mammal with a long trunk, large ears, and tusks.",
-        "image-path": "images/elephant.jpg",
+        "path": "images/elephant.jpg",
         "category": "animals"
     },
     {
         "name": "football",
         "description": "A round ball used in the sport of football (soccer).",
-        "image-path": "images/football.jpg",
+        "path": "images/football.jpg",
         "category": "sports"
     },
     {
         "name": "guitar",
         "description": "A stringed musical instrument with a wooden body and a long neck.",
-        "image-path": "images/guitar.jpg",
+        "path": "images/guitar.jpg",
         "category": "music"
     },
     {
         "name": "house",
         "description": "A building where people live, typically containing rooms, and often with a roof and walls.",
-        "image-path": "images/house.jpg",
+        "path": "images/house.jpg",
         "category": "buildings"
     },
     {
         "name": "ice cream",
         "description": "A frozen dessert made from cream or milk, sugar, and flavorings.",
-        "image-path": "images/ice_cream.jpg",
+        "path": "images/ice_cream.jpg",
         "category": "desserts"
     },
     {
         "name": "jacket",
         "description": "A short coat with sleeves, worn outdoors.",
-        "image-path": "images/jacket.jpg",
+        "path": "images/jacket.jpg",
         "category": "clothing"
+    },
+    {
+        "Name": "beleaua",
+        "Description": "e mafiot.",
+        "path": "../../images/beleaua.jpg",
+        "Category": "animals"
     }
 ]

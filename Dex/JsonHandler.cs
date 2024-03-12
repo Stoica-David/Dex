@@ -10,8 +10,8 @@ namespace Dex
 {
     public class JsonHandler
     {
-        private readonly string adminsFilePath = "..\\..\\admins.json";
-        private readonly string wordsFilePath = "..\\..\\words.json";
+        private readonly string adminsFilePath = "..\\..\\resources\\admins.json";
+        private readonly string wordsFilePath = "..\\..\\resources\\words.json";
 
         public static string GetRelativePath(string absolutePath)
         {
@@ -86,7 +86,7 @@ namespace Dex
 
             string newDescription = modifiedWord.Description;
             string newCategory = modifiedWord.Category;
-            string newImagePath = modifiedWord.ImagePath;
+            string newImagePath = modifiedWord.Path;
 
             if (newDescription != "")
             {
@@ -95,7 +95,7 @@ namespace Dex
 
             if (newImagePath != "")
             {
-                wordToUpdate.ImagePath = newImagePath;
+                wordToUpdate.Path = newImagePath;
             }
 
             if(newCategory != "")

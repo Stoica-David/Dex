@@ -144,7 +144,7 @@ namespace Dex
                 currentRelativePath = JsonHandler.GetRelativePath(selectedFilePath);
 
                 // Display selected image
-                DisplaySelectedImage(selectedFilePath);
+                DisplaySelectedImage(currentRelativePath);
             }
         }
 
@@ -155,7 +155,7 @@ namespace Dex
                 // Create BitmapImage
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
-                bitmap.UriSource = new Uri(imagePath);
+                bitmap.UriSource = new Uri(imagePath, UriKind.Relative);
                 bitmap.EndInit();
 
                 // Set image source of the Image control

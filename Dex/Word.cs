@@ -15,7 +15,7 @@ namespace Dex
         public string Category { get; set; }
 
         // Default image path
-        private const string DefaultImagePath = "/images/default.jpg";
+        private const string DefaultImagePath = "../../images/default.jpg";
 
         // Constructor
         public Word()
@@ -27,16 +27,15 @@ namespace Dex
         {
             Name = name;
             Description = description;
-            
-            if (imagePath != null)
-            {
-                ImagePath = imagePath;
-            }
-            else
-            {
-                ImagePath = DefaultImagePath;
-            }
+            ImagePath = imagePath;
+            Category = category;
+        }
 
+        public Word(string name, string description, string category)
+        {
+            Name = name;
+            Description = description;
+            ImagePath = DefaultImagePath;
             Category = category;
         }
     }

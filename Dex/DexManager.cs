@@ -39,12 +39,27 @@ namespace Dex
             foreach (Word word in words)
             {
                 if (categories.FirstOrDefault(category => category == word.Category) == null)
-                { 
+                {
                     categories.Add(word.Category);
                 }
             }
 
             return categories;
+        }
+
+        public bool AddWord(Word word)
+        { 
+            return jsonHandler.AppendWord(word);
+        }
+
+        public bool ModifyWord(Word word) 
+        {
+            return jsonHandler.ModifyWord(word);   
+        }
+
+        public bool RemoveWord(string wordName)
+        {
+            return jsonHandler.RemoveWord(wordName);
         }
     }
 }

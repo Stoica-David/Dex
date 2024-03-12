@@ -50,17 +50,5 @@ namespace Dex
                 textBox.Text = "Username";
             }
         }
-
-        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            // Update the password when it changes
-            // Note: In this approach, we don't need to store the password separately
-            // as we handle the authentication directly
-        }
-
-        private void usernameTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            // Your event handling logic here
-        }
     }
 }

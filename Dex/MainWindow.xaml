@@ -1,7 +1,8 @@
 ﻿<Window x:Class="Dex.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Dictionary Application" Height="350" Width="500">
+        Title="Dictionary Application" Height="500" Width="700"
+        WindowStartupLocation="CenterScreen">
 	<Grid>
 		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 			<Button Content="Administrative" Click="Administrative_Click" Margin="5"/>

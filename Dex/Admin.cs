@@ -21,35 +21,5 @@ namespace Dex
             Password = password;
             jsonHandler = new JsonHandler();
         }
-
-        public void AddWord(Word newWord)
-        {
-            List<Word> words = jsonHandler.ReadAllWords();
-            words.Add(newWord);
-            jsonHandler.AppendWords(words);
-        }
-
-        public void RemoveWord(string wordName)
-        {
-            List<Word> words = jsonHandler.ReadAllWords();
-            Word wordToRemove = words.Find(word => word.Name == wordName);
-            if (wordToRemove != null)
-            {
-                words.Remove(wordToRemove);
-                jsonHandler.OverwriteFileWithText(words);
-            }
-        }
-
-        public void ModifyWord(string wordName, Word modifiedWord)
-        {
-            List<Word> words = jsonHandler.ReadAllWords();
-            Word wordToModify = words.Find(word => word.Name == wordName);
-            if (wordToModify != null)
-            {
-                int index = words.IndexOf(wordToModify);
-                words[index] = modifiedWord;
-                jsonHandler.OverwriteFileWithText(words);
-            }
-        }
     }
 }

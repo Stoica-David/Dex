@@ -1,0 +1,24 @@
+﻿ ﻿<Window x:Class="Dex.AdministrativeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DexOnline"
+        mc:Ignorable="d"
+        Background="#333333"
+        Title="Dex Online - Admin" Height="618" Width="1146">
+    <Grid>
+        <Button HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="60" Height="27" Background="#FF6F6F6F" Click="Button_Click_Back">
+            <Image Source="/images/icon_back.png" Stretch="Fill" Width="30"/>
+        </Button>
+        <ComboBox Name="wordTextBox" SelectionChanged="searchBox_SelectionChanged" HorizontalAlignment="Left" Margin="42,233,0,0" VerticalAlignment="Top" Width="248" Background="#615e66" IsEditable="True" Keyboard.KeyDown="OnSearchBoxTextChanged" IsTextSearchEnabled="False"></ComboBox>
+        <TextBlock Foreground="#FFAFAFAF" HorizontalAlignment="Left" Margin="42,200,0,0" TextWrapping="Wrap" Text="Enter a word:" VerticalAlignment="Top" Height="25" Width="159" FontSize="20" FontFamily="Segoe UI Semibold"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="42,301,0,0" VerticalAlignment="Top" Height="37" Width="247" FontSize="20" FontFamily="Segoe UI Semibold" Background="#615e66" Click="Button_Click_Add" />
+        <Button Content="Modify" HorizontalAlignment="Left" Margin="42,362,0,0" VerticalAlignment="Top" Height="37" Width="247" FontSize="20" FontFamily="Segoe UI Semibold" Background="#615e66" Click="Button_Click_Modify"/>
+        <Button Content="Remove" HorizontalAlignment="Left" Margin="42,426,0,0" VerticalAlignment="Top" Height="37" Width="247" FontSize="20" FontFamily="Segoe UI Semibold" Background="#615e66" Click="Button_Click_Remove"/>
+        <ComboBox Name="categoryTextBox" HorizontalAlignment="Left" Margin="386,233,0,0" VerticalAlignment="Top" Width="212" Background="#615e66"  SelectionChanged="CategorySelectionChanged"/>
+        <TextBlock Foreground="#FFAFAFAF" HorizontalAlignment="Left" Margin="386,200,0,0" TextWrapping="Wrap" Text="Choose category:" VerticalAlignment="Top" Height="25" Width="159" FontSize="20" FontFamily="Segoe UI Semibold"/>
+        <TextBox x:Name="defArea" HorizontalAlignment="Left" Margin="386,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="307" Height="142" Background="#615e66" Foreground="White" FontSize="20" FontFamily="Segoe UI Semibold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="384,288,0,0" TextWrapping="Wrap" Text="Definition:" VerticalAlignment="Top" Height="24" Width="156" Foreground="#FFAFAFAF" FontSize="20" FontFamily="Segoe UI Semibold"/>
+    </Grid>
+</Window>

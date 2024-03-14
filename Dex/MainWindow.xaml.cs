@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Dex.ViewModels;
+using System.Windows;
 
 namespace Dex
 {
@@ -6,28 +7,8 @@ namespace Dex
     {
         public MainWindow()
         {
+            this.DataContext = new MainWindowVM();
             InitializeComponent();
-        }
-
-        private void Administrative_Click(object sender, RoutedEventArgs e)
-        {
-            LoginWindow adminWindow = new LoginWindow();
-            adminWindow.Show();
-            this.Close();
-        }
-
-        private void Search_Click(object sender, RoutedEventArgs e)
-        {
-            SearchWindow searchWindow = new SearchWindow();
-            searchWindow.Show();
-            this.Close();
-        }
-
-        private void Game_Click(object sender, RoutedEventArgs e)
-        {
-            GameWindow gameWindow = new GameWindow();
-            gameWindow.Show();
-            this.Close();
         }
     }
 }

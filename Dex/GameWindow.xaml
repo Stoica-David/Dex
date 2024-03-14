@@ -1,9 +1,0 @@
-﻿<Window x:Class="Dex.GameWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Game Window" Height="300" Width="400">
-	<Grid>
-		<!-- Add your game functionality here -->
-		<TextBlock Text="Game Module" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-	</Grid>
-</Window>

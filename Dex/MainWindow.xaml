@@ -1,13 +1,33 @@
 ﻿<Window x:Class="Dex.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewmodels="clr-namespace:Dex.ViewModels"
+        xmlns:views="clr-namespace:Dex.Views"
         Title="Dictionary Application" Height="500" Width="700"
         WindowStartupLocation="CenterScreen">
-	<Grid>
-		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-			<Button Content="Administrative" Click="Administrative_Click" Margin="5"/>
-			<Button Content="Search" Click="Search_Click" Margin="5"/>
-			<Button Content="Game" Click="Game_Click" Margin="5"/>
-		</StackPanel>
-	</Grid>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:MenuVM}">
+            <views:MenuView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:LoginVM}">
+	        <views:LoginView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type viewmodels:AdministrativeVM}">
+            <views:AdministrativeView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:SearchVM}">
+            <views:SearchView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:GameVM}">
+            <views:GameView/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <ContentControl Content="{Binding SelectedVM}"/>
+
 </Window>

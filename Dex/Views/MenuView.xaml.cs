@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Dex
+namespace Dex.Views
 {
     /// <summary>
-    /// Interaction logic for GameWindow.xaml
+    /// Interaction logic for Menu.xaml
     /// </summary>
-    public partial class GameWindow : Window
+    public partial class MenuView : UserControl
     {
-        public GameWindow()
+        public MenuView()
         {
             InitializeComponent();
         }

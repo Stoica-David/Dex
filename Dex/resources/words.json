@@ -1,68 +1,68 @@
 [
-    {
-        "name": "apple",
-        "description": "A round fruit with red or green skin and a whitish flesh.",
-        "path": "images/apple.jpg",
-        "category": "fruits"
-    },
-    {
-        "name": "banana",
-        "description": "A long curved fruit with a yellow skin.",
-        "path": "images/banana.jpg",
-        "category": "fruits"
-    },
-    {
-        "name": "carrot",
-        "description": "A long, orange vegetable with a sweet taste.",
-        "path": "images/carrot.jpg",
-        "category": "vegetables"
-    },
-    {
-        "name": "dog",
-        "description": "A domesticated carnivorous mammal with a snout, sharp teeth, and a bark or howl.",
-        "path": "images/dog.jpg",
-        "category": "animals"
-    },
-    {
-        "name": "elephant",
-        "description": "A large mammal with a long trunk, large ears, and tusks.",
-        "path": "images/elephant.jpg",
-        "category": "animals"
-    },
-    {
-        "name": "football",
-        "description": "A round ball used in the sport of football (soccer).",
-        "path": "images/football.jpg",
-        "category": "sports"
-    },
-    {
-        "name": "guitar",
-        "description": "A stringed musical instrument with a wooden body and a long neck.",
-        "path": "images/guitar.jpg",
-        "category": "music"
-    },
-    {
-        "name": "house",
-        "description": "A building where people live, typically containing rooms, and often with a roof and walls.",
-        "path": "images/house.jpg",
-        "category": "buildings"
-    },
-    {
-        "name": "ice cream",
-        "description": "A frozen dessert made from cream or milk, sugar, and flavorings.",
-        "path": "images/ice_cream.jpg",
-        "category": "desserts"
-    },
-    {
-        "name": "jacket",
-        "description": "A short coat with sleeves, worn outdoors.",
-        "path": "images/jacket.jpg",
-        "category": "clothing"
-    },
-    {
-        "Name": "beleaua",
-        "Description": "e mafiot.",
-        "path": "../../images/beleaua.jpg",
-        "Category": "animals"
-    }
+  {
+    "Name": "apple",
+    "Description": "A round fruit with red or green skin and a whitish flesh.",
+    "Path": "images/apple.jpg",
+    "Category": "fruits"
+  },
+  {
+    "Name": "banana",
+    "Description": "A long curved fruit with a yellow skin.",
+    "Path": "images/banana.jpg",
+    "Category": "fruits"
+  },
+  {
+    "Name": "carrot",
+    "Description": "A long, orange vegetable with a sweet taste.",
+    "Path": "images/carrot.jpg",
+    "Category": "vegetables"
+  },
+  {
+    "Name": "dog",
+    "Description": "A domesticated carnivorous mammal with a snout, sharp teeth, and a bark or howl.",
+    "Path": "images/dog.jpg",
+    "Category": "animals"
+  },
+  {
+    "Name": "elephant",
+    "Description": "A large mammal with a long trunk, large ears, and tusks.",
+    "Path": "images/elephant.jpg",
+    "Category": "animals"
+  },
+  {
+    "Name": "football",
+    "Description": "A round ball used in the sport of football (soccer).",
+    "Path": "images/football.jpg",
+    "Category": "sports"
+  },
+  {
+    "Name": "guitar",
+    "Description": "A stringed musical instrument with a wooden body and a long neck.",
+    "Path": "images/guitar.jpg",
+    "Category": "music"
+  },
+  {
+    "Name": "house",
+    "Description": "A building where people live, typically containing rooms, and often with a roof and walls.",
+    "Path": "images/house.jpg",
+    "Category": "buildings"
+  },
+  {
+    "Name": "ice cream",
+    "Description": "A frozen dessert made from cream or milk, sugar, and flavorings.",
+    "Path": "images/ice_cream.jpg",
+    "Category": "desserts"
+  },
+  {
+    "Name": "jacket",
+    "Description": "A short coat with sleeves, worn outdoors.",
+    "Path": "images/jacket.jpg",
+    "Category": "clothing"
+  },
+  {
+    "Name": "beleaua",
+    "Description": "e mafiot.",
+    "Path": "../../images/default.jpg",
+    "Category": "clothing"
+  }
 ]

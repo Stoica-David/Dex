@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Xml;
+using System.Drawing;
+using System.Drawing.Imaging;
 using Newtonsoft.Json;
 
 namespace Dex
@@ -15,6 +15,23 @@ namespace Dex
 
         public static string GetRelativePath(string absolutePath)
         {
+            string newImageDirectory = Path.GetDirectoryName(absolutePath);
+            string existingImagesDirectory = Path.GetDirectoryName(Path.GetFullPath("..\\..\\images\\"));
+
+            bool isAbsoluteAnymore = true;
+
+            if (!string.Equals(newImageDirectory, existingImagesDirectory))
+            {
+                string newPath = SaveNewImageToImages(absolutePath);
+                if (newPath == "")
+                    return "";
+                else
+                {
+                    absolutePath = newPath;
+                    isAbsoluteAnymore = false;
+                }
+            }
+
             // Get the current directory
             string currentDirectory = Directory.GetCurrentDirectory();
 
@@ -23,14 +40,48 @@ namespace Dex
             FileInfo fileInfoCurrent = new FileInfo(currentDirectory);
 
             // Compute relative path
-            Uri uriAbsolute = new Uri(absolutePath);
-            Uri uriCurrent = new Uri(currentDirectory + Path.DirectorySeparatorChar);
-            Uri relativeUri = uriCurrent.MakeRelativeUri(uriAbsolute);
+            Uri uriAbsolute;
+            Uri uriCurrent;
+            Uri relativeUri; 
+
+            if (isAbsoluteAnymore)
+            {
+                uriAbsolute = new Uri(absolutePath);
+                uriCurrent = new Uri(currentDirectory + Path.DirectorySeparatorChar);
+                relativeUri = uriCurrent.MakeRelativeUri(uriAbsolute);
+            }
+            else
+            {
+                relativeUri = new Uri(absolutePath, UriKind.Relative);
+            }
 
             // Convert relative Uri to string
             string relativePath = Uri.UnescapeDataString(relativeUri.ToString());
 
             return relativePath;
+        }
+
+        public static string SaveNewImageToImages(string absolutePath)
+        {
+            return SaveImage(absolutePath, "..\\..\\images");
+        }
+
+        static string SaveImage(string sourcePath, string destinationPath)
+        {
+            if (!Path.GetExtension(sourcePath).Equals(".jpg", StringComparison.OrdinalIgnoreCase))
+            {
+                return "";
+            }
+
+            string fileName = Path.GetFileName(sourcePath);
+            // Load the image from the source path
+            using (Image image = Image.FromFile(sourcePath))
+            {
+                // Save the image to the destination path
+                image.Save(destinationPath + "\\" + fileName);
+            }
+
+            return destinationPath + "\\" + fileName;
         }
 
         public List<Admin> ReadAllAdmins()
@@ -79,7 +130,7 @@ namespace Dex
         {
             Word wordToUpdate = DexManager.Instance.Words.FirstOrDefault(word => word.Name == modifiedWord.Name);
 
-            if(wordToUpdate == null)
+            if (wordToUpdate == null)
             {
                 return false;
             }
@@ -98,7 +149,7 @@ namespace Dex
                 wordToUpdate.Path = newImagePath;
             }
 
-            if(newCategory != "")
+            if (newCategory != "")
             {
                 if (DexManager.Instance.Categories.Count(category => category == wordToUpdate.Category) == 1)
                 {

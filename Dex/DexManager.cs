@@ -19,9 +19,9 @@ namespace Dex
             }
         }
 
-        public ObservableCollection<Word> Words { get; private set; }
-        public ObservableCollection<Admin> Admins { get; private set; }
-        public ObservableCollection<string> Categories { get; private set; }
+        public ObservableCollection<Word> Words { get; set; }
+        public ObservableCollection<Admin> Admins { get; set; }
+        public ObservableCollection<string> Categories { get; set; }
 
         private readonly JsonHandler jsonHandler = new JsonHandler();
 
@@ -35,6 +35,7 @@ namespace Dex
         private List<string> GetAllCategories(List<Word> words)
         {
             List<string> categories = new List<string>();
+            categories.Add("All");
 
             foreach (Word word in words)
             {

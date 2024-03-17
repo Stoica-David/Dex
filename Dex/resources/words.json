@@ -2,13 +2,13 @@
   {
     "Name": "apple",
     "Description": "A round fruit with red or green skin and a whitish flesh.",
-    "Path": "images/apple.jpg",
+    "Path": "../../images/apple.jpg",
     "Category": "fruits"
   },
   {
     "Name": "banana",
     "Description": "A long curved fruit with a yellow skin.",
-    "Path": "images/banana.jpg",
+    "Path": "../../images/banana.jpg",
     "Category": "fruits"
   },
   {

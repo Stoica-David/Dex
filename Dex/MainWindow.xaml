@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:viewmodels="clr-namespace:Dex.ViewModels"
         xmlns:views="clr-namespace:Dex.Views"
-        Title="Dictionary Application" Height="500" Width="700"
+        Title="Dictionary Application" Height="1080" Width="1920"
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>

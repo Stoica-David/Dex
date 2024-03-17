@@ -63,7 +63,7 @@
     "Name": "beleaua",
     "Description": "e mafiot.",
     "Path": "../../images/beleaua.jpg",
-    "Category": "clothing"
+    "Category": "animals"
   },
   {
     "Name": "iepure",
@@ -75,6 +75,6 @@
     "Name": "pisica",
     "Description": "bea lapte.",
     "Path": "..\\..\\images\\cat.jpg",
-    "Category": "animals."
+    "Category": "animals"
   }
 ]

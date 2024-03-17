@@ -48,6 +48,6 @@
         <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" Content="Administrative" Command="{Binding SwitchToLoginCommand}"/>
         <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" Content="Search" Command="{Binding SwitchToSearchCommand}"/>
         <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" Content="Game" Command="{Binding SwitchToGameCommand}"/>
-        <Label Grid.Row="6" Grid.Column="2" Content="Version Sigma 1.0.0" FontSize="16" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        <Label Grid.Row="6" Grid.Column="0" Content="Version Sigma 1.0.0" FontSize="16" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>

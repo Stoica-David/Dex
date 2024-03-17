@@ -6,29 +6,126 @@
              xmlns:local="clr-namespace:Dex.Views"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="5">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="CustomListBoxStyle" TargetType="ListBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBox">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                                <ItemsPresenter/>
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Search" HorizontalAlignment="Center" Margin="0,0,0,143" FontWeight="Bold" Grid.RowSpan="2"/>
+        <Image Grid.Row="0"  Source="/Dex;component/images/lildex.jpg" Stretch="Uniform" HorizontalAlignment="Center" Margin="0,15,0,15" Width="264">
+            <Image.RenderTransform>
+                <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
+            </Image.RenderTransform>
+        </Image>
+        <Label Grid.Column="1" Content="Search a word:" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="40" Foreground="Black" Margin="58,0,0,0"/>
 
-        <ComboBox Margin="10,27,694,243" Grid.Row="1" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}"/>
+        <Label Grid.Row="1" Content="Category:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="15" Foreground="Black" Margin="29,66,0,0"/>
+        <ComboBox Grid.Row="1" Style="{StaticResource CustomComboBoxStyle}" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" Width="120" Height="30" Margin="150,66,0,0" VerticalAlignment="Top"/>
 
         <!-- Search Bar -->
-        <TextBox Grid.Row="1" Margin="10,63,10,198" x:Name="searchTextBox" RenderTransformOrigin="0.5,0.5" Text="{Binding SearchedString, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource CustomTextBoxStyle}"  x:Name="searchTextBox" RenderTransformOrigin="0.5,0.5" Text="{Binding SearchedString, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="500" Height="30" Margin="58,69,0,0" VerticalAlignment="Top"/>
 
         <!-- List Box to display search results -->
-        <ListBox Grid.Row="1" Margin="10,94,10,198" Name="resultsListBox" Height="Auto" ItemsSource="{Binding FilteredList}" SelectedItem="{Binding SelectedWordName}" RenderTransformOrigin="0.5,0.5"/>
+        <ListBox Grid.Row="1" Grid.Column="1" Style="{StaticResource CustomListBoxStyle}" Name="resultsListBox" Margin="58,97,58,150" Height="Auto" Width="500"  ItemsSource="{Binding FilteredList}" SelectedItem="{Binding SelectedWordName}" RenderTransformOrigin="0.5,0.5"/>
 
-        <!-- Word Details -->
-        <StackPanel Grid.Row="1" Margin="20,370,0,-350" x:Name="wordDetailsPanel">
-            <TextBlock Text="{Binding SelectedWord.Name}" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBlock Text="{Binding SelectedWord.Category}" Margin="0,0,0,5"/>
-            <TextBlock Text="{Binding SelectedWord.Description}" Margin="0,0,0,5"/>
-            <Image HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="200" x:Name="wordImage" RenderTransformOrigin="0.52,1.277" Source="{Binding SelectedImage}"/>
-        </StackPanel>
-        <Button Content="Main Menu" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,258,0,0" Width="80" Command="{Binding SwitchToMenuCommand}" Grid.Row="1"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Name:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding SelectedWord.Name}" FontSize="16"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Category:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding SelectedWord.Category}" Margin="0,0,0,5" FontSize="16"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Category:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding SelectedWord.Description}" Margin="0,0,0,5" FontSize="16"/>
+
+        <Label Grid.Row="5" Grid.Column="0" Content="Image:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+        <Image Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300" Height="200" x:Name="wordImage" RenderTransformOrigin="0.52,1.277" Source="{Binding SelectedImage}"/>
+
+        <Button Grid.Row="6" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" Content="Main Menu" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Command="{Binding SwitchToMenuCommand}" Height="41"/>
+        <Label Grid.Row="6" Grid.Column="0" Content="Version Sigma 1.0.0" FontSize="16" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>

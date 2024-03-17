@@ -85,6 +85,6 @@
         <!-- Log In Button -->
         <Button Grid.Row="6" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" Content="Log In" HorizontalAlignment="Center" VerticalAlignment="Center" Width="76" Command="{Binding SwitchToAdministrativeCommand}"/>
 
-        <Label Grid.Row="7" Grid.Column="2" Content="Version Sigma 1.0.0" FontSize="16" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        <Label Grid.Row="7" Grid.Column="0" Content="Version Sigma 1.0.0" FontSize="16" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>

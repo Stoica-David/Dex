@@ -75,7 +75,6 @@
 	    </Image>
 
         <Label Grid.Row="0" Grid.Column="1" Content="Customize: " HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="40" Foreground="Black"/>
-        <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource CustomButtonStyle}" Content="Main Menu" HorizontalAlignment="Right" VerticalAlignment="Top" Width="150" Command="{Binding SwitchToMenuCommand}"/>
 
         <!-- Word Label and TextBox -->
         <Label Grid.Row="1" Grid.Column="0" Content="Word:" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10" FontSize="16" FontWeight="Bold" Foreground="Black"/>
@@ -98,6 +97,7 @@
         <Button Grid.Row="7" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" Content="Remove" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Command="{Binding ButtonRemoveCommand}"/>
         <Button Grid.Row="7" Grid.Column="2" Style="{StaticResource CustomButtonStyle}" Content="Modify" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Command="{Binding ButtonModifyCommand}"/>
 
-        <Label Grid.Row="8" Grid.Column="2" Content="Version Sigma 1.0.0" FontSize="16" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        <Button Grid.Row="8" Grid.Column="2" Style="{StaticResource CustomButtonStyle}" Content="Main Menu" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Command="{Binding SwitchToMenuCommand}"/>
+        <Label Grid.Row="8" Grid.Column="0" Content="Version Sigma 1.0.0" FontSize="16" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>

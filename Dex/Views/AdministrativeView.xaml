@@ -5,29 +5,99 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Dex.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <!-- Word Label and TextBox -->
-        <Label Content="Word:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10"/>
-        <TextBox x:Name="wordTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="107,14,0,0" Width="200" Text="{Binding NameOfTheWord}"/>
+             d:DesignHeight="1080" d:DesignWidth="1920">
 
-        <Label Content="Description:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
-        <TextBox x:Name="descriptionTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="107,41,0,0" Width="200" Height="63" Text="{Binding DescriptionOfTheWord}"/>
+    <UserControl.Resources>
+	    <Style x:Key="CustomButtonStyle" TargetType="Button">
+		    <Setter Property="Background" Value="LightGray"/>
+		    <Setter Property="Foreground" Value="Black"/>
+		    <Setter Property="BorderBrush" Value="Black"/>
+		    <Setter Property="BorderThickness" Value="1"/>
+		    <Setter Property="Padding" Value="10"/>
+		    <Setter Property="FontSize" Value="14"/>
+		    <Setter Property="FontWeight" Value="Bold"/>
+		    <Setter Property="Template">
+			    <Setter.Value>
+				    <ControlTemplate TargetType="Button">
+					    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" CornerRadius="5">
+						    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					    </Border>
+				    </ControlTemplate>
+			    </Setter.Value>
+		    </Setter>
+	    </Style>
+
+        <Style x:Key="CustomTextBoxStyle" TargetType="TextBox">
+	        <Setter Property="Background" Value="LightGray"/>
+	        <Setter Property="Foreground" Value="Black"/>
+	        <Setter Property="BorderBrush" Value="Black"/>
+	        <Setter Property="BorderThickness" Value="1"/>
+	        <Setter Property="Padding" Value="5"/>
+	        <Setter Property="FontSize" Value="14"/>
+	        <Setter Property="FontFamily" Value="Arial"/>
+	        <Setter Property="HorizontalAlignment" Value="Left"/>
+	        <Setter Property="VerticalAlignment" Value="Center"/>
+	        <Setter Property="Template">
+		        <Setter.Value>
+			        <ControlTemplate TargetType="TextBox">
+				        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="5">
+					        <ScrollViewer x:Name="PART_ContentHost"/>
+				        </Border>
+			        </ControlTemplate>
+		        </Setter.Value>
+	        </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="420"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="240"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+	    <Image Grid.Row="0" Grid.Column="0"  Source="/Dex;component/images/lildex.jpg" Stretch="Uniform" HorizontalAlignment="Left" Margin="10,30,0,0">
+		    <Image.RenderTransform>
+			    <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
+		    </Image.RenderTransform>
+	    </Image>
+
+        <Label Grid.Row="0" Grid.Column="1" Content="Customize: " HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="40" Foreground="Black"/>
+        <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource CustomButtonStyle}" Content="Main Menu" HorizontalAlignment="Right" VerticalAlignment="Top" Width="150" Command="{Binding SwitchToMenuCommand}"/>
+
+        <!-- Word Label and TextBox -->
+        <Label Grid.Row="1" Grid.Column="0" Content="Word:" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource CustomTextBoxStyle}" x:Name="wordTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Text="{Binding NameOfTheWord}"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Description:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource CustomTextBoxStyle}" x:Name="descriptionTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Height="63" Text="{Binding DescriptionOfTheWord}"/>
 
         <!-- Category Label and TextBox -->
-        <Label Content="Category:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,116,0,0"/>
-        <TextBox x:Name="categoryTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="107,120,0,0" Width="200" Text="{Binding CategoryOfTheWord}"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Category:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource CustomTextBoxStyle}" x:Name="categoryTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Text="{Binding CategoryOfTheWord}"/>
 
         <!-- Image Label and Button to Select Image -->
-        <Label Content="Image:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,163,0,0" RenderTransformOrigin="0.723,2.577"/>
-        <Image x:Name="selectedImageControl" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="71,163,0,0" Width="300" Height="200" Source="{Binding SelectedImage}"/>
-        <Button Content="Select Image" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="71,371,0,0" Width="100" Command="{Binding ButtonSelectImageCommand}"/>
+        <Label Grid.Row="4" Grid.Column="0" Content="Image:" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.723,2.577" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+        <Image Grid.Row="4" Grid.Column="1" x:Name="selectedImageControl" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="200" Source="{Binding SelectedImage}" Margin="0,23,0,0"/>
+        <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" Content="Select Image" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Command="{Binding ButtonSelectImageCommand}"/>
 
         <!-- Add, Remove, and Modify Buttons -->
-        <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,425,0,0" Width="80" Command="{Binding ButtonAddCommand}"/>
-        <Button Content="Remove" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,425,0,0" Width="80" Command="{Binding ButtonRemoveCommand}"/>
-        <Button Content="Modify" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="277,425,0,0" Width="80" Command="{Binding ButtonModifyCommand}"/>
+        <Button Grid.Row="7" Grid.Column="0" Style="{StaticResource CustomButtonStyle}" Content="Add" HorizontalAlignment="Right" VerticalAlignment="Center" Width="80" Command="{Binding ButtonAddCommand}"/>
+        <Button Grid.Row="7" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" Content="Remove" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Command="{Binding ButtonRemoveCommand}"/>
+        <Button Grid.Row="7" Grid.Column="2" Style="{StaticResource CustomButtonStyle}" Content="Modify" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Command="{Binding ButtonModifyCommand}"/>
 
-        <Button Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="277,371,0,0" Width="80" Command="{Binding SwitchToMenuCommand}"/>
+        <Label Grid.Row="8" Grid.Column="2" Content="Version Sigma 1.0.0" FontSize="16" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>

@@ -14,6 +14,8 @@ namespace Dex.ViewModels
     {
         private string currentRelativePath = "";
 
+        // PROPERTIES
+
         private BitmapImage selectedImage;
         public BitmapImage SelectedImage
         {
@@ -70,6 +72,8 @@ namespace Dex.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        // COMMANDS
 
         private ICommand switchToMenuCommand;
         public ICommand SwitchToMenuCommand
@@ -141,8 +145,12 @@ namespace Dex.ViewModels
             }
         }
 
+        // DELEGATES
+
         public delegate void SwitchToMenu();
         public SwitchToMenu OnSwitchToMenu { get; set; }
+
+        // METHODS
 
         public AdministrativeVM()
         {

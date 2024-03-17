@@ -14,55 +14,61 @@
   {
     "Name": "carrot",
     "Description": "A long, orange vegetable with a sweet taste.",
-    "Path": "images/carrot.jpg",
+    "Path": "../../images/carrot.jpg",
     "Category": "vegetables"
   },
   {
     "Name": "dog",
     "Description": "A domesticated carnivorous mammal with a snout, sharp teeth, and a bark or howl.",
-    "Path": "images/dog.jpg",
+    "Path": "../../images/dog.jpg",
     "Category": "animals"
   },
   {
     "Name": "elephant",
     "Description": "A large mammal with a long trunk, large ears, and tusks.",
-    "Path": "images/elephant.jpg",
+    "Path": "../../images/elephant.jpg",
     "Category": "animals"
   },
   {
     "Name": "football",
     "Description": "A round ball used in the sport of football (soccer).",
-    "Path": "images/football.jpg",
+    "Path": "../../images/football.jpg",
     "Category": "sports"
   },
   {
     "Name": "guitar",
     "Description": "A stringed musical instrument with a wooden body and a long neck.",
-    "Path": "images/guitar.jpg",
+    "Path": "../../images/guitar.jpg",
     "Category": "music"
   },
   {
     "Name": "house",
     "Description": "A building where people live, typically containing rooms, and often with a roof and walls.",
-    "Path": "images/house.jpg",
+    "Path": "../../images/house.jpg",
     "Category": "buildings"
   },
   {
     "Name": "ice cream",
     "Description": "A frozen dessert made from cream or milk, sugar, and flavorings.",
-    "Path": "images/ice_cream.jpg",
+    "Path": "../../images/ice_cream.jpg",
     "Category": "desserts"
   },
   {
     "Name": "jacket",
     "Description": "A short coat with sleeves, worn outdoors.",
-    "Path": "images/jacket.jpg",
+    "Path": "../../images/jacket.jpg",
     "Category": "clothing"
   },
   {
     "Name": "beleaua",
     "Description": "e mafiot.",
-    "Path": "../../images/default.jpg",
+    "Path": "../../images/beleaua.jpg",
     "Category": "clothing"
+  },
+  {
+    "Name": "iepure",
+    "Description": "Mananca morcovi.",
+    "Path": "..\\..\\images\\iepure.jpg",
+    "Category": "animals"
   }
 ]

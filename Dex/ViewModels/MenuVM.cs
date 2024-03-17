@@ -9,6 +9,8 @@ namespace Dex.ViewModels
 {
     public class MenuVM: BaseVM
     {
+        // COMMAND
+
         private ICommand switchToLoginCommand;
         public ICommand SwitchToLoginCommand
         {
@@ -50,6 +52,8 @@ namespace Dex.ViewModels
                 return switchToGameCommand;
             }
         }
+
+        // DELEGATES
 
         public delegate void SwitchToLogin();
         public SwitchToLogin OnSwitchToLogin{ get; set; }

@@ -12,6 +12,8 @@ namespace Dex.ViewModels
 {
     public class LoginVM: BaseVM
     {
+        // PROPERTIES
+
         private string username;
         public string Username 
         { 
@@ -42,6 +44,8 @@ namespace Dex.ViewModels
             }
         }
 
+        // COMMANDS
+
         private ICommand switchToAdministrativeCommand;
         public ICommand SwitchToAdministrativeCommand
         {
@@ -56,9 +60,13 @@ namespace Dex.ViewModels
             }
         }
 
+        // DELEGATES
+
         public delegate void SwitchToAdministrative();
 
         public SwitchToAdministrative OnSwitchToAdministrative { get; set; }
+
+        // METHODS
 
         public LoginVM() 
         {

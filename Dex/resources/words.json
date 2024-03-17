@@ -70,5 +70,11 @@
     "Description": "Mananca morcovi.",
     "Path": "..\\..\\images\\iepure.jpg",
     "Category": "animals"
+  },
+  {
+    "Name": "pisica",
+    "Description": "bea lapte.",
+    "Path": "..\\..\\images\\cat.jpg",
+    "Category": "animals."
   }
 ]

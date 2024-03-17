@@ -42,7 +42,7 @@ namespace Dex
             // Compute relative path
             Uri uriAbsolute;
             Uri uriCurrent;
-            Uri relativeUri; 
+            Uri relativeUri;
 
             if (isAbsoluteAnymore)
             {
@@ -75,13 +75,14 @@ namespace Dex
 
             string fileName = Path.GetFileName(sourcePath);
             // Load the image from the source path
+            string finalPath = destinationPath + "\\" + fileName;
             using (Image image = Image.FromFile(sourcePath))
             {
                 // Save the image to the destination path
-                image.Save(destinationPath + "\\" + fileName);
+                image.Save(finalPath);
             }
 
-            return destinationPath + "\\" + fileName;
+            return finalPath;
         }
 
         public List<Admin> ReadAllAdmins()

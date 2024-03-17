@@ -154,19 +154,19 @@ namespace Dex.ViewModels
 
             if (SelectedCategory == "All")
             {
-                FilteredList = DexManager.Instance.Words.Select(word => word.Name).Where(name => name.StartsWith(SearchedString)).ToList();
+                FilteredList = DexManager.Instance.Words.Select(word => word.Name).Where(name => name.ToLower().StartsWith(SearchedString.ToLower())).ToList();
             }
             else
             {
                 var filteredByCategory = DexManager.Instance.Words.Where(word => word.Category == SelectedCategory);
 
-                FilteredList = filteredByCategory.Select(word => word.Name).Where(name => name.StartsWith(SearchedString)).ToList();
+                FilteredList = filteredByCategory.Select(word => word.Name).Where(name => name.ToLower().StartsWith(SearchedString.ToLower())).ToList();
             }
         }
 
         public void UpdateWordByName()
         {
-            SelectedWord = DexManager.Instance.Words.FirstOrDefault(word => word.Name == selectedWordName);
+            SelectedWord = DexManager.Instance.Words.FirstOrDefault(word => word.Name.ToLower() == selectedWordName.ToLower());
 
             if (SelectedWord != null)
             {

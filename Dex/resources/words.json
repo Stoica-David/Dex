@@ -76,5 +76,11 @@
     "Description": "bea lapte.",
     "Path": "..\\..\\images\\cat.jpg",
     "Category": "animals"
+  },
+  {
+    "Name": "peste",
+    "Description": "sefu la femei.",
+    "Path": "..\\..\\images\\peste.jpg",
+    "Category": "sef"
   }
 ]

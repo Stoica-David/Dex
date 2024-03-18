@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -61,6 +62,37 @@ namespace Dex
         public bool RemoveWord(string wordName)
         {
             return jsonHandler.RemoveWord(wordName);
+        }
+
+        public List<Word> Get5RandomWords()
+        {
+            int wordsNumber = Words.Count();
+
+            if(wordsNumber< 5)
+            {
+                return new List<Word>();
+            }
+
+            Random random = new Random();
+
+            List<int> indexes = new List<int>();
+            while (indexes.Count < 5)
+            {
+                int randomNumber = random.Next(0, wordsNumber);
+                if (!indexes.Contains(randomNumber))
+                {
+                    indexes.Add(randomNumber);
+                }
+            }
+
+            List<Word> words = new List<Word>();
+
+            foreach(int i in indexes)
+            {
+                words.Add(Words[i]);
+            }
+
+            return words;
         }
     }
 }

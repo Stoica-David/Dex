@@ -66,20 +66,20 @@
     "Category": "animals"
   },
   {
-    "Name": "iepure",
-    "Description": "Mananca morcovi.",
+    "Name": "rabbit",
+    "Description": "eats carrots.",
     "Path": "..\\..\\images\\iepure.jpg",
     "Category": "animals"
   },
   {
-    "Name": "pisica",
-    "Description": "bea lapte.",
+    "Name": "cat",
+    "Description": "Drinks milk.",
     "Path": "..\\..\\images\\cat.jpg",
     "Category": "animals"
   },
   {
-    "Name": "peste",
-    "Description": "sefu la femei.",
+    "Name": "fish",
+    "Description": "Sefu la femei.",
     "Path": "..\\..\\images\\peste.jpg",
     "Category": "sef"
   }

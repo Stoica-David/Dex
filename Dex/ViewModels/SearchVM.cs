@@ -208,7 +208,7 @@ namespace Dex.ViewModels
         public SearchVM()
         {
             SearchedString = string.Empty;
-            FilteredList = DexManager.Instance.Words.Select(word => word.Name).Where(name => name.StartsWith(searchedString)).ToList();
+            FilteredList = DexManager.Instance.Words.Select(word => word.Name).Where(name => name.StartsWith(SearchedString)).ToList();
             Categories = DexManager.Instance.Categories;
             SelectedCategory = Categories[0];
         }
@@ -235,7 +235,7 @@ namespace Dex.ViewModels
 
         public void UpdateWordByName()
         {
-            SelectedWord = DexManager.Instance.Words.FirstOrDefault(word => word.Name.ToLower() == selectedWordName.ToLower());
+            SelectedWord = DexManager.Instance.Words.FirstOrDefault(word => word.Name.ToLower() == SelectedWordName.ToLower());
 
             if (SelectedWord != null)
             {

@@ -5,8 +5,79 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Dex.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+	    <Style x:Key="CustomButtonStyle" TargetType="Button">
+		    <Setter Property="Background" Value="LightGray"/>
+		    <Setter Property="Foreground" Value="Black"/>
+		    <Setter Property="BorderBrush" Value="Black"/>
+		    <Setter Property="BorderThickness" Value="1"/>
+		    <Setter Property="Padding" Value="10"/>
+		    <Setter Property="FontSize" Value="14"/>
+		    <Setter Property="FontWeight" Value="Bold"/>
+		    <Setter Property="Template">
+			    <Setter.Value>
+				    <ControlTemplate TargetType="Button">
+					    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" CornerRadius="5">
+						    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					    </Border>
+				    </ControlTemplate>
+			    </Setter.Value>
+		    </Setter>
+	    </Style>
+
+        <Style x:Key="CustomTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="5">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
-	    <Button Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="310,205,0,0" Width="80" Command="{Binding SwitchToMenuCommand}"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0"  Source="/Dex;component/images/lildex.jpg" Stretch="Uniform" HorizontalAlignment="Left" Margin="10,-3,0,33" Width="264">
+            <Image.RenderTransform>
+                <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
+            </Image.RenderTransform>
+        </Image>
+        <Label Grid.Column="1" Content="Guess the word:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="40" Foreground="Black" RenderTransformOrigin="0.342,0.437"/>
+        <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource CustomButtonStyle}" Content="Back" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Command="{Binding SwitchToMenuCommand}" Height="41"/>
+
+        <Image Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="200" x:Name="wordImage" RenderTransformOrigin="0.52,1.277" Source="{Binding SelectedImage}"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding SelectedDescription}" Margin="0,0,0,5" FontSize="16"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding GameOverLabel}" Margin="0,0,0,5" FontSize="16"/>
+
+        <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource CustomTextBoxStyle}"  x:Name="searchTextBox" RenderTransformOrigin="0.5,0.5" Text="{Binding SelectedGuess}" Width="500" Height="30" Margin="0,67,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Command="{Binding ButtonGuessCommand}" Height="41"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Version Sigma 1.0.0" FontSize="16" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" Content="Finish" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Command="{Binding ButtonFinishCommand}" Height="41"/>
+        <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding GuessedLabel}" FontSize="16" FontWeight="Bold" Foreground="Black"/>
     </Grid>
 </UserControl>

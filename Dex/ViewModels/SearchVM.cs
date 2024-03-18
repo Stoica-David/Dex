@@ -56,6 +56,10 @@ namespace Dex.ViewModels
             set
             {
                 selectedWord = value;
+                NameLabel = "Name:";
+                DescriptionLabel = "Description:";
+                CategoryLabel = "Category:";
+                ImageLabel = "Image:";
                 OnPropertyChanged();
             }
         }
@@ -85,8 +89,73 @@ namespace Dex.ViewModels
             }
         }
 
+        private string nameLabel;
+        public string NameLabel
+        {
+            get
+            {
+                return nameLabel;
+            }
+
+            set
+            {
+                nameLabel = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string descriptionLabel;
+        public string DescriptionLabel
+        {
+            get
+            {
+                return descriptionLabel;
+            }
+
+            set
+            {
+                descriptionLabel = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string categoryLabel;
+        public string CategoryLabel
+        {
+            get
+            {
+                return categoryLabel;
+            }
+
+            set
+            {
+                categoryLabel = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string imageLabel;
+        public string ImageLabel
+        {
+            get
+            {
+                return imageLabel;
+            }
+
+            set
+            {
+                imageLabel = value;
+                OnPropertyChanged();
+            }
+        }
+
+        // DELEGATES
+
         public delegate void SwitchToMenu();
         public SwitchToMenu OnSwitchToMenu { get; set; }
+
+
+        // SEARCH SPECIFIC
 
         private List<string> filteredList;
         public List<string> FilteredList

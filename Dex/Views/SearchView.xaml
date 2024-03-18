@@ -113,16 +113,16 @@
         <!-- List Box to display search results -->
         <ListBox Grid.Row="1" Grid.Column="1" Style="{StaticResource CustomListBoxStyle}" Name="resultsListBox" Margin="58,97,58,150" Height="Auto" Width="500"  ItemsSource="{Binding FilteredList}" SelectedItem="{Binding SelectedWordName}" RenderTransformOrigin="0.5,0.5"/>
 
-        <Label Grid.Row="2" Grid.Column="0" Content="Name:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding NameLabel}" FontSize="16" FontWeight="Bold" Foreground="Black"/>
         <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding SelectedWord.Name}" FontSize="16"/>
 
-        <Label Grid.Row="3" Grid.Column="0" Content="Category:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding CategoryLabel}" FontSize="16" FontWeight="Bold" Foreground="Black"/>
         <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding SelectedWord.Category}" Margin="0,0,0,5" FontSize="16"/>
 
-        <Label Grid.Row="4" Grid.Column="0" Content="Category:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding DescriptionLabel}" FontSize="16" FontWeight="Bold" Foreground="Black"/>
         <TextBlock Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding SelectedWord.Description}" Margin="0,0,0,5" FontSize="16"/>
 
-        <Label Grid.Row="5" Grid.Column="0" Content="Image:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding ImageLabel}" FontSize="16" FontWeight="Bold" Foreground="Black"/>
         <Image Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300" Height="200" x:Name="wordImage" RenderTransformOrigin="0.52,1.277" Source="{Binding SelectedImage}"/>
 
         <Button Grid.Row="6" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" Content="Main Menu" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Command="{Binding SwitchToMenuCommand}" Height="41"/>

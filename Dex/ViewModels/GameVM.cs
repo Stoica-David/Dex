@@ -192,25 +192,7 @@ namespace Dex.ViewModels
             GuessedWordsNumber = 0;
             stopDisplaying = false;
 
-            Random random = new Random();
-
-            int randomNumber = random.Next(0, 101);
-
-            if (randomNumber % 2 == 0)
-            {
-                selectedDescription = randomWords[currIndex].Description;
-                selectedImage = null;
-            }
-            else
-            {
-                BitmapImage bitmap = new BitmapImage();
-                bitmap.BeginInit();
-                bitmap.UriSource = new Uri(randomWords[currIndex].Path, UriKind.Relative);
-                bitmap.EndInit();
-
-                selectedImage = bitmap;
-                selectedDescription = string.Empty;
-            }
+            generateRandomForGame(randomWords[currIndex]);
         }
 
         public void ButtonClickGuess(object param)
@@ -247,25 +229,7 @@ namespace Dex.ViewModels
 
             if (!stopDisplaying)
             {
-                Random random = new Random();
-
-                int randomNumber = random.Next(0, 101);
-
-                if (randomNumber % 2 == 0)
-                {
-                    SelectedDescription = randomWords[currIndex].Description;
-                    SelectedImage = null;
-                }
-                else
-                {
-                    BitmapImage bitmap = new BitmapImage();
-                    bitmap.BeginInit();
-                    bitmap.UriSource = new Uri(randomWords[currIndex].Path, UriKind.Relative);
-                    bitmap.EndInit();
-
-                    SelectedImage = bitmap;
-                    SelectedDescription = string.Empty;
-                }
+                generateRandomForGame(randomWords[currIndex]);
             }
         }
 
@@ -280,6 +244,19 @@ namespace Dex.ViewModels
             SelectedImage = null;
             GuessedLabel = "Guessed Words: " + GuessedWordsNumber;
 
+            generateRandomForGame(randomWords[currIndex]);
+        }
+
+        private void generateRandomForGame(Word word)
+        {
+            if (word.Path.Contains("default"))
+            {
+                SelectedDescription = randomWords[currIndex].Description;
+                SelectedImage = null;
+                
+                return;
+            }
+
             Random random = new Random();
 
             int randomNumber = random.Next(0, 101);
@@ -293,7 +270,7 @@ namespace Dex.ViewModels
             {
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
-                bitmap.UriSource = new Uri(randomWords[currIndex].Path, UriKind.Relative);
+                bitmap.UriSource = new Uri(randomWords[currIndex].Path);
                 bitmap.EndInit();
 
                 SelectedImage = bitmap;

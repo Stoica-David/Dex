@@ -2,85 +2,97 @@
   {
     "Name": "apple",
     "Description": "A round fruit with red or green skin and a whitish flesh.",
-    "Path": "../../images/apple.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\apple.jpg",
     "Category": "fruits"
   },
   {
     "Name": "banana",
     "Description": "A long curved fruit with a yellow skin.",
-    "Path": "../../images/banana.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\banana.jpg",
     "Category": "fruits"
   },
   {
     "Name": "carrot",
     "Description": "A long, orange vegetable with a sweet taste.",
-    "Path": "../../images/carrot.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\carrot.jpg",
     "Category": "vegetables"
   },
   {
     "Name": "dog",
     "Description": "A domesticated carnivorous mammal with a snout, sharp teeth, and a bark or howl.",
-    "Path": "../../images/dog.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\dog.jpg",
     "Category": "animals"
   },
   {
     "Name": "elephant",
     "Description": "A large mammal with a long trunk, large ears, and tusks.",
-    "Path": "../../images/elephant.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\elephant.jpg",
     "Category": "animals"
   },
   {
     "Name": "football",
     "Description": "A round ball used in the sport of football (soccer).",
-    "Path": "../../images/football.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\football.jpg",
     "Category": "sports"
   },
   {
     "Name": "guitar",
     "Description": "A stringed musical instrument with a wooden body and a long neck.",
-    "Path": "../../images/guitar.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\guitar.jpg",
     "Category": "music"
   },
   {
     "Name": "house",
     "Description": "A building where people live, typically containing rooms, and often with a roof and walls.",
-    "Path": "../../images/house.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\house.jpg",
     "Category": "buildings"
   },
   {
     "Name": "ice cream",
     "Description": "A frozen dessert made from cream or milk, sugar, and flavorings.",
-    "Path": "../../images/ice_cream.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\ice cream.jpg",
     "Category": "desserts"
   },
   {
     "Name": "jacket",
     "Description": "A short coat with sleeves, worn outdoors.",
-    "Path": "../../images/jacket.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\jacket.jpg",
     "Category": "clothing"
   },
   {
     "Name": "beleaua",
     "Description": "e mafiot.",
-    "Path": "../../images/beleaua.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\beleaua.jpg",
     "Category": "animals"
   },
   {
     "Name": "rabbit",
     "Description": "Eats carrots.",
-    "Path": "../../images/default.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\default.jpg",
     "Category": "animals"
   },
   {
     "Name": "cat",
     "Description": "Drinks milk.",
-    "Path": "..\\..\\images\\cat.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\cat.jpg",
     "Category": "animals"
   },
   {
     "Name": "fish",
     "Description": "Sefu la femei.",
-    "Path": "..\\..\\images\\peste.jpg",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\peste.jpg",
     "Category": "sef"
+  },
+  {
+    "Name": "monkey",
+    "Description": "Eats banana.",
+    "Path": "C:\\Users\\DAVID-IOANSTOICA\\Desktop\\maimuta.jpg",
+    "Category": "animals"
+  },
+  {
+    "Name": "random",
+    "Description": "e random",
+    "Path": "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\default.jpg",
+    "Category": "random"
   }
 ]

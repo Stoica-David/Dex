@@ -1,12 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace Dex
 {
-    public class DexManager
+    public class DexManager : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
         private static DexManager instance;
         public static DexManager Instance
         {
@@ -22,7 +30,21 @@ namespace Dex
 
         public ObservableCollection<Word> Words { get; set; }
         public ObservableCollection<Admin> Admins { get; set; }
-        public ObservableCollection<string> Categories { get; set; }
+
+        private ObservableCollection<string> categories;
+        public ObservableCollection<string> Categories 
+        { 
+            get
+            {
+                return categories;
+            }
+
+            set
+            {
+                categories = value;
+                OnPropertyChanged();
+            }
+        }
 
         private readonly JsonHandler jsonHandler = new JsonHandler();
 

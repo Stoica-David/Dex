@@ -8,16 +8,15 @@ namespace Dex
 {
     public class Word
     {
-        // Properties
+        private const string DefaultImagePath = "C:\\Facultate\\MAP\\Tema 1 - Dex\\Dex\\images\\default.jpg";
+ 
+        // PROPERTIES
         public string Name { get; set; }
         public string Description { get; set; }
         public string Path { get; set; }
         public string Category { get; set; }
 
-        // Default image path
-        private const string DefaultImagePath = "../../images/default.jpg";
-
-        // Constructor
+        // CONSTRUCTORS
         public Word()
         {
             Path = DefaultImagePath;

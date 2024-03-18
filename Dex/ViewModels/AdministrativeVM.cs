@@ -192,14 +192,7 @@ namespace Dex.ViewModels
             {
                 Word wordToModify = new Word();
 
-                if (currentRelativePath != "")
-                {
-                    wordToModify = new Word(NameOfTheWord.ToLower(), DescriptionOfTheWord, currentRelativePath, CategoryOfTheWord.ToLower());
-                }
-                else
-                {
-                    wordToModify = new Word(NameOfTheWord.ToLower(), DescriptionOfTheWord, CategoryOfTheWord.ToLower());
-                }
+                wordToModify = new Word(NameOfTheWord.ToLower(), DescriptionOfTheWord, currentRelativePath, CategoryOfTheWord.ToLower());
 
                 if (!DexManager.Instance.ModifyWord(wordToModify))
                 {
@@ -258,7 +251,8 @@ namespace Dex.ViewModels
                 string selectedFilePath = openFileDialog.FileName;
 
                 // Compute relative path
-                currentRelativePath = JsonHandler.GetRelativePath(selectedFilePath);
+                _ = JsonHandler.GetRelativePath(selectedFilePath);
+                currentRelativePath = selectedFilePath;
 
                 // Display selected image
                 DisplaySelectedImage(selectedFilePath);

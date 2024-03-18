@@ -67,8 +67,8 @@
   },
   {
     "Name": "rabbit",
-    "Description": "eats carrots.",
-    "Path": "..\\..\\images\\iepure.jpg",
+    "Description": "Eats carrots.",
+    "Path": "../../images/default.jpg",
     "Category": "animals"
   },
   {

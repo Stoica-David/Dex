@@ -1,9 +1,5 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
@@ -154,21 +150,24 @@ namespace Dex.ViewModels
 
         public AdministrativeVM()
         {
+            NameOfTheWord = string.Empty;
+            CategoryOfTheWord = string.Empty;
+            DescriptionOfTheWord = string.Empty;
         }
 
         private void ButtonClickAdd(object param)
         {
-            if (nameOfTheWord != "" && categoryOfTheWord != "" && descriptionOfTheWord != "")
+            if (NameOfTheWord != "" && CategoryOfTheWord != "" && DescriptionOfTheWord != "")
             {
                 Word wordToAdd = new Word();
 
                 if (currentRelativePath != "")
                 {
-                    wordToAdd = new Word(nameOfTheWord.ToLower(), descriptionOfTheWord, currentRelativePath, categoryOfTheWord.ToLower());
+                    wordToAdd = new Word(NameOfTheWord.ToLower(), DescriptionOfTheWord, currentRelativePath, CategoryOfTheWord.ToLower());
                 }
                 else
                 {
-                    wordToAdd = new Word(nameOfTheWord.ToLower(), descriptionOfTheWord, categoryOfTheWord.ToLower());
+                    wordToAdd = new Word(NameOfTheWord.ToLower(), DescriptionOfTheWord, CategoryOfTheWord.ToLower());
                 }
 
                 if (!DexManager.Instance.AddWord(wordToAdd))
@@ -189,17 +188,17 @@ namespace Dex.ViewModels
 
         private void ButtonClickModify(object param)
         {
-            if (nameOfTheWord != "" && (descriptionOfTheWord != "" || categoryOfTheWord != "" || selectedImage != null))
+            if (NameOfTheWord != "" && (DescriptionOfTheWord != "" || CategoryOfTheWord != "" || SelectedImage != null))
             {
                 Word wordToModify = new Word();
 
                 if (currentRelativePath != "")
                 {
-                    wordToModify = new Word(nameOfTheWord.ToLower(), descriptionOfTheWord, currentRelativePath, categoryOfTheWord.ToLower());
+                    wordToModify = new Word(NameOfTheWord.ToLower(), DescriptionOfTheWord, currentRelativePath, CategoryOfTheWord.ToLower());
                 }
                 else
                 {
-                    wordToModify = new Word(nameOfTheWord.ToLower(), descriptionOfTheWord, categoryOfTheWord.ToLower());
+                    wordToModify = new Word(NameOfTheWord.ToLower(), DescriptionOfTheWord, CategoryOfTheWord.ToLower());
                 }
 
                 if (!DexManager.Instance.ModifyWord(wordToModify))
@@ -220,9 +219,9 @@ namespace Dex.ViewModels
 
         private void ButtonClickRemove(object param)
         {
-            if (nameOfTheWord != "")
+            if (NameOfTheWord != "")
             {
-                if (!DexManager.Instance.RemoveWord(nameOfTheWord.ToLower()))
+                if (!DexManager.Instance.RemoveWord(NameOfTheWord.ToLower()))
                 {
                     MessageBox.Show("The given word is already not in the file!");
                 }
